@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="150sp"
+        android:background="@drawable/shaper_link_line_dialog_back"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择执行器件"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/cb_cur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="窗帘" />
+
+            <CheckBox
+                android:id="@+id/cb_warm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="报警灯" />
+
+            <CheckBox
+                android:id="@+id/cb_lamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="射灯" />
+
+            <CheckBox
+                android:id="@+id/cb_fan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="换气扇" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_chose_con"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择执行器件" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

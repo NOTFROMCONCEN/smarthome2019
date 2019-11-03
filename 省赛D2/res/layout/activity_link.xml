@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="horizontal" >
+
+    <CheckBox
+        android:id="@+id/cb_link_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="当" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:entries="@array/temp_hum_ill_Press" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:entries="@array/big_small" />
+
+    <EditText
+        android:id="@+id/et_number"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/btn_chose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择执行器件" />
+
+</LinearLayout>

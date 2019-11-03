@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">YangTiDemo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="title_activity_link">LinkActivity</string>
+
+    <string-array name="big_small">
+        <item>≥</item>
+        <item>&lt;</item>
+    </string-array>
+    <string-array name="temp_hum">
+        <item>温度</item>
+        <item>湿度</item>
+    </string-array>
+    <string-array name="open_cls">
+        <item>开</item>
+        <item>关</item>
+    </string-array>
+
+</resources>

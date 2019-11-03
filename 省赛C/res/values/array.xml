@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="big_small">
+        <item>></item>
+        <item>&lt;=</item>
+    </string-array>
+    <string-array name="temp_ill">
+        <item>温度</item>
+        <item>光照</item>
+    </string-array>
+    <string-array name="lamp_fan">
+        <item>风扇</item>
+        <item>射灯</item>
+    </string-array>
+
+</resources>

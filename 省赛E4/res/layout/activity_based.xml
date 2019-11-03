@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/b31" >
+
+    <com.example.edemo4.myview.MyView1
+        android:id="@+id/myview1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/myview2"
+        android:layout_alignTop="@+id/myview2" >
+    </com.example.edemo4.myview.MyView1>
+
+    <com.example.edemo4.myview.MyView2
+        android:id="@+id/myview2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tv_number_l"
+        android:layout_below="@+id/radioGroup1" >
+    </com.example.edemo4.myview.MyView2>
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/ra_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="电视"
+            android:textColor="#fff" />
+
+        <RadioButton
+            android:id="@+id/ra_dvd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="DVD"
+            android:textColor="#fff" />
+
+        <RadioButton
+            android:id="@+id/ra_kt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="空调"
+            android:textColor="#fff" />
+
+        <RadioButton
+            android:id="@+id/ra_lamp_l"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="射灯左"
+            android:textColor="#fff" />
+
+        <RadioButton
+            android:id="@+id/ra_lamp_r"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="射灯右"
+            android:textColor="#fff" />
+
+        <RadioButton
+            android:id="@+id/ra_cur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="窗帘"
+            android:textColor="#fff" />
+
+        <RadioButton
+            android:id="@+id/ra_door"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="门禁"
+            android:textColor="#fff" />
+
+        <RadioButton
+            android:id="@+id/ra_fan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="风扇"
+            android:textColor="#fff" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/RadioGroup01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/ra_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="开"
+            android:textColor="#fff" />
+
+        <RadioButton
+            android:id="@+id/ra_cls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="关"
+            android:textColor="#fff" />
+
+        <RadioButton
+            android:id="@+id/ra_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="停"
+            android:textColor="#fff" />
+    </RadioGroup>
+
+    <SeekBar
+        android:id="@+id/sk_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/tv_number_l"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sk_number"
+        android:layout_alignParentLeft="true"
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#fff" />
+
+    <TextView
+        android:id="@+id/tv_number_r"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sk_number"
+        android:layout_alignParentRight="true"
+        android:text="100"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#fff" />
+
+</RelativeLayout>

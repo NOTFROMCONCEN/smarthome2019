@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    tools:context=".IndexActivity" >
+
+    <LinearLayout
+        android:id="@+id/line_base"
+        android:layout_width="200sp"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#90000000"
+        android:orientation="vertical" >
+
+        <include layout="@layout/activity_base" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line_link"
+        android:layout_width="match_parent"
+        android:layout_height="130sp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/line_base"
+        android:background="#70000000"
+        android:orientation="vertical" >
+
+        <include layout="@layout/activity_link" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout01"
+        android:layout_width="match_parent"
+        android:layout_height="130sp"
+        android:layout_above="@+id/line_link"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/line_link"
+        android:background="#90000000"
+        android:orientation="vertical" >
+
+        <include layout="@layout/activity_control" />
+    </LinearLayout>
+
+</RelativeLayout>
