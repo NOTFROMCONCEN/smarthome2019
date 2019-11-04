@@ -1,31 +1,17 @@
 # SmartHome2019省赛
 
 #### 介绍
-完成的省赛Demo
+SmartHome2019省赛
+省赛E题
+2019/11/4
+编译完成，较为完美
 
 #### 软件架构
-软件架构说明
-
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
+Android
+Run On ARM
+实体机：企想嵌入套件
 #### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
+ Fork 本仓库
 
 #### 码云特技
 

@@ -29,7 +29,7 @@ import com.example.edemo.mysql.MyDataBaseHelper;
 import com.example.edemo.toast.DiyToast;
 
 /**
- * 
+ * è”åŠ¨æ¨¡å¼
  * 
  * @author A
  * 
@@ -61,23 +61,23 @@ public class LinkActivity extends Fragment {
 		initView(view);
 		dbHelper = new MyDataBaseHelper(getActivity(), "info.db", null, 2);
 		db = dbHelper.getWritableDatabase();
-		list1.add("ÎÂ¶È");
-		list1.add("Êª¶È");
-		list1.add("¹âÕÕ");
-		list1.add("ÑÌÎí");
-		list1.add("È¼Æø");
-		list1.add("ÆøÑ¹");
+		list1.add("æ¸©åº¦");
+		list1.add("æ¹¿åº¦");
+		list1.add("å…‰ç…§");
+		list1.add("çƒŸé›¾");
+		list1.add("ç‡ƒæ°”");
+		list1.add("æ°”å‹");
 
 		list2.add(">");
 		list2.add("<");
 		list2.add("=");
 
-		list3.add("¿Õµ÷");
+		list3.add("ç©ºè°ƒ");
 		list3.add("DVD");
-		list3.add("µçÊÓ");
-		list3.add("ÉäµÆÈ«¿ª");
-		list3.add("ÉäµÆÈ«¹Ø");
-		list3.add("±¨¾¯µÆ¿ª");
+		list3.add("ç”µè§†");
+		list3.add("å°„ç¯å…¨å¼€");
+		list3.add("å°„ç¯å…¨å…³");
+		list3.add("æŠ¥è­¦ç¯å¼€");
 
 		mAdapter = new ArrayAdapter<String>(getActivity(),
 				android.R.layout.simple_list_item_single_choice, list1);
@@ -97,12 +97,7 @@ public class LinkActivity extends Fragment {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-				for (int i = 0; i < 99; i++) {
-					if (arg2 == i) {
-						System.out.println(list1.get(arg2).toString());
-						control_chuanganqi = list1.get(arg2);
-					}
-				}
+				control_chuanganqi = list1.get(arg2);
 			}
 		});
 		lv_2.setOnItemClickListener(new OnItemClickListener() {
@@ -111,12 +106,7 @@ public class LinkActivity extends Fragment {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-				for (int i = 0; i < 99; i++) {
-					if (arg2 == i) {
-						System.out.println(list2.get(arg2).toString());
-						control_big_small = list2.get(arg2);
-					}
-				}
+				control_big_small = list2.get(arg2);
 			}
 		});
 		lv_3.setOnItemClickListener(new OnItemClickListener() {
@@ -125,11 +115,7 @@ public class LinkActivity extends Fragment {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-				for (int i = 0; i < 99; i++) {
-					if (arg2 == i) {
-						System.out.println(list3.get(arg2).toString());
-						control_shebei = list3.get(arg2);
-					}
+				control_shebei = list3.get(arg2);
 				}
 			}
 		});
@@ -140,29 +126,19 @@ public class LinkActivity extends Fragment {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				if (et_name.getText().toString().isEmpty()
-						|| et_number.getText().toString().isEmpty()) {
-					DiyToast.showToast(getActivity(), "²»ÄÜÓĞ¿Õ°×ÏîÄ¿");
+						|| et_number.getText().toString().isEmpty()
+						|| control_big_small.equals("")
+						|| control_chuanganqi.equals("")
+						|| control_shebei.equals("")) {
+					DiyToast.showToast(getActivity(), "ä¸èƒ½æœ‰ç©ºç™½é¡¹ç›®");
 				} else {
-					Cursor cursor2 = db.rawQuery(
-							"select * from link_mode where link_name = ?",
-							new String[] { et_name.getText().toString() });
-					if (!cursor2.moveToNext()) {
-						if (now_ARG == get_ARG) {
-							DiyToast.showToast(getActivity(), "ÇëÏÈ¹Ø±Õµ±Ç°ÕıÔÚÔËĞĞµÄÄ£Ê½");
-						} else {
-							db.execSQL(
-									"insert into link_mode(link_name,link_chuanganqi,link_big_small,link_number,link_shebei)values(?,?,?,?,?)",
-									new String[] {
-											et_name.getText().toString(),
-											control_chuanganqi,
-											control_big_small,
-											et_number.getText().toString(),
-											control_shebei });
-							get_data();
-						}
-					} else {
-						DiyToast.showToast(getActivity(), "ÒÑ´æÔÚÕâ¸öÃû×Ö");
-					}
+					db.execSQL(
+							"insert into link_mode(link_name,link_chuanganqi,link_big_small,link_number,link_shebei)values(?,?,?,?,?)",
+							new String[] { et_name.getText().toString(),
+									control_chuanganqi, control_big_small,
+									et_number.getText().toString(),
+									control_shebei });
+					get_data();
 				}
 			}
 		});
@@ -174,60 +150,31 @@ public class LinkActivity extends Fragment {
 				// TODO Auto-generated method stub
 				Cursor cursor4 = (Cursor) arg0.getItemAtPosition(arg2);
 				String string = cursor4.getString(1).toString();
-				getnum.add(String.valueOf(arg2));
-				System.out.println(getnum);
-				if (getnum.size() >= 1) {
-					for (int i = 1; i < getnum.size(); i++) {
-						System.out.println(getnum.get(i));
-						if (arg2 == Integer.valueOf(getnum.get(arg2 - 1))) {
-							System.out.println(111);
-						}
+				System.out.println(string);
+				if (now_ARG != arg2) {
+					now_ARG = arg2;
+					link_mode = true;
+					Cursor cursor2 = db.rawQuery(
+							"select * from link_mode where link_name = ?",
+							new String[] { string });
+					if (cursor2.moveToNext()) {
+						System.out.println(cursor2.getString(cursor2
+								.getColumnIndex("link_chuanganqi")));
+						link_start(cursor2.getString(cursor2
+								.getColumnIndex("link_chuanganqi")), cursor2
+								.getString(cursor2
+										.getColumnIndex("link_big_small")),
+								cursor2.getString(cursor2
+										.getColumnIndex("link_number")),
+								cursor2.getString(cursor2
+										.getColumnIndex("link_shebei")));
+					} else {
+						DiyToast.showToast(getActivity(), "error");
 					}
+
+				} else {
+					link_mode = false;
 				}
-
-				/*
-				 * 
-				 */
-
-				// if (now_ARG != arg2) {
-				// System.out.println(111);
-				// tick_timer = 0;
-				// now_ARG = arg2;
-				// System.out.println("now" + "---" + now_ARG);
-				// System.out.println("gra2" + "---" + arg2);
-				// getnum.add(String.valueOf(arg2));
-				// System.out.println(getnum);
-				// link_mode = false;
-				// Cursor cursor2 = db.rawQuery(
-				// "select * from link_mode where link_name = ?",
-				// new String[] { string });
-				// get_ARG = now_ARG;
-				// if (cursor2.moveToNext()) {
-				// link_start(cursor2.getString(cursor2
-				// .getColumnIndex("link_chuanganqi")), cursor2
-				// .getString(cursor2
-				// .getColumnIndex("link_big_small")),
-				// cursor2.getString(cursor2
-				// .getColumnIndex("link_number")),
-				// cursor2.getString(cursor2
-				// .getColumnIndex("link_shebei")));
-				// } else {
-				// tick_timer = 0;
-				// DiyToast.showToast(getActivity(), "error");
-				// }
-				// } else {
-				// System.out.println(222);
-				// for (int i = 0; i < getnum.size(); i++) {
-				// if (arg2 == Integer.valueOf(getnum.get(i))) {
-				// getnum.remove(i);
-				// }
-				// }
-				// System.out.println(getnum);
-				// get_ARG = 998;
-				// tick_timer = 0;
-				// link_mode = false;
-				// now_ARG = 999;
-				// }
 			}
 		});
 		return view;
@@ -267,52 +214,51 @@ public class LinkActivity extends Fragment {
 			public void run() {
 				// TODO Auto-generated method stub
 				while (link_mode) {
-					System.out.println("Ñ­»·¿ªÊ¼");
-					Log.e("´«¸ĞÆ÷", chuanganqi);
-					Log.e("´óĞ¡", big_small);
-					Log.e("ÊıÖµ", number);
-					Log.e("ÏìÓ¦Éè±¸", shebnei);
-
+					System.out.println("å¾ªç¯å¼€å§‹");
+					Log.e("ä¼ æ„Ÿå™¨", chuanganqi);
+					Log.e("å¤§å°", big_small);
+					Log.e("æ•°å€¼", number);
+					Log.e("å“åº”è®¾å¤‡", shebnei);
 					try {
 						Thread.sleep(1000);
 					} catch (Exception e) {
 						// TODO: handle exception
 					}
 					String number_string = null;
-					if (chuanganqi.equals("ÎÂ¶È")) {
+					if (chuanganqi.equals("æ¸©åº¦")) {
 						number_string = String.valueOf(BaseActivity.temp);
 					}
-					if (chuanganqi.equals("Êª¶È")) {
+					if (chuanganqi.equals("æ¹¿åº¦")) {
 						number_string = String.valueOf(BaseActivity.hum);
 					}
-					if (chuanganqi.equals("¹âÕÕ")) {
+					if (chuanganqi.equals("å…‰ç…§")) {
 						number_string = String.valueOf(BaseActivity.ill);
 					}
-					if (chuanganqi.equals("ÑÌÎí")) {
+					if (chuanganqi.equals("çƒŸé›¾")) {
 						number_string = String.valueOf(BaseActivity.smo);
 					}
-					if (chuanganqi.equals("È¼Æø")) {
+					if (chuanganqi.equals("ç‡ƒæ°”")) {
 						number_string = String.valueOf(BaseActivity.gas);
 					}
-					if (chuanganqi.equals("ÆøÑ¹")) {
+					if (chuanganqi.equals("æ°”å‹")) {
 						number_string = String.valueOf(BaseActivity.press);
 					}
-					Log.e("ÊµÊ±ÊıÖµ", number_string);
+					Log.e("å®æ—¶æ•°å€¼", number_string);
 					if (big_small.equals(">")) {
 						if (Float.valueOf(number_string) > Float
 								.valueOf(number)) {
 							tick_timer++;
 							if (tick_timer == 1) {
-								if (shebnei.equals("¿Õµ÷")) {
-									System.out.println("¿ª¿Õµ÷");
+								if (shebnei.equals("ç©ºè°ƒ")) {
+									System.out.println("å¼€ç©ºè°ƒ");
 									ControlUtils.control(
 											ConstantUtil.INFRARED_1_SERVE, "1",
 											ConstantUtil.OPEN);
 								}
 							}
 							if (tick_timer == 1) {
-								if (shebnei.equals("µçÊÓ")) {
-									System.out.println("¿ªµçÊÓ");
+								if (shebnei.equals("ç”µè§†")) {
+									System.out.println("å¼€ç”µè§†");
 									ControlUtils.control(
 											ConstantUtil.INFRARED_1_SERVE, "5",
 											ConstantUtil.OPEN);
@@ -320,26 +266,26 @@ public class LinkActivity extends Fragment {
 							}
 							if (tick_timer == 1) {
 								if (shebnei.equals("DVD")) {
-									System.out.println("¿ªDVD");
+									System.out.println("å¼€DVD");
 									ControlUtils.control(
 											ConstantUtil.INFRARED_1_SERVE, "8",
 											ConstantUtil.OPEN);
 								}
 							}
-							if (shebnei.equals("ÉäµÆÈ«¿ª")) {
-								System.out.println("¿ªÉäµÆ");
+							if (shebnei.equals("å°„ç¯å…¨å¼€")) {
+								System.out.println("å¼€å°„ç¯");
 								ControlUtils.control(ConstantUtil.Lamp,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.OPEN);
 							}
-							if (shebnei.equals("ÉäµÆÈ«¹Ø")) {
-								System.out.println("¹ØÉäµÆ");
+							if (shebnei.equals("å°„ç¯å…¨å…³")) {
+								System.out.println("å…³å°„ç¯");
 								ControlUtils.control(ConstantUtil.Lamp,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.CLOSE);
 							}
-							if (shebnei.equals("±¨¾¯µÆ¿ª")) {
-								System.out.println("¿ª±¨¾¯µÆ");
+							if (shebnei.equals("æŠ¥è­¦ç¯å¼€")) {
+								System.out.println("å¼€æŠ¥è­¦ç¯");
 								ControlUtils.control(ConstantUtil.WarningLight,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.OPEN);
@@ -348,14 +294,14 @@ public class LinkActivity extends Fragment {
 							tick_timer = 0;
 							tick_timer++;
 							if (tick_timer == 1) {
-								if (shebnei.equals("¿Õµ÷")) {
+								if (shebnei.equals("ç©ºè°ƒ")) {
 									ControlUtils.control(
 											ConstantUtil.INFRARED_1_SERVE, "1",
 											ConstantUtil.OPEN);
 								}
 							}
 							if (tick_timer == 1) {
-								if (shebnei.equals("µçÊÓ")) {
+								if (shebnei.equals("ç”µè§†")) {
 									ControlUtils.control(
 											ConstantUtil.INFRARED_1_SERVE, "5",
 											ConstantUtil.OPEN);
@@ -368,17 +314,17 @@ public class LinkActivity extends Fragment {
 											ConstantUtil.OPEN);
 								}
 							}
-							if (shebnei.equals("ÉäµÆÈ«¿ª")) {
+							if (shebnei.equals("å°„ç¯å…¨å¼€")) {
 								ControlUtils.control(ConstantUtil.Lamp,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.OPEN);
 							}
-							if (shebnei.equals("ÉäµÆÈ«¹Ø")) {
+							if (shebnei.equals("å°„ç¯å…¨å…³")) {
 								ControlUtils.control(ConstantUtil.Lamp,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.CLOSE);
 							}
-							if (shebnei.equals("±¨¾¯µÆ¿ª")) {
+							if (shebnei.equals("æŠ¥è­¦ç¯å¼€")) {
 								ControlUtils.control(ConstantUtil.WarningLight,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.OPEN);
@@ -392,14 +338,14 @@ public class LinkActivity extends Fragment {
 								.valueOf(number)) {
 							tick_timer++;
 							if (tick_timer == 1) {
-								if (shebnei.equals("¿Õµ÷")) {
+								if (shebnei.equals("ç©ºè°ƒ")) {
 									ControlUtils.control(
 											ConstantUtil.INFRARED_1_SERVE, "1",
 											ConstantUtil.OPEN);
 								}
 							}
 							if (tick_timer == 1) {
-								if (shebnei.equals("µçÊÓ")) {
+								if (shebnei.equals("ç”µè§†")) {
 									ControlUtils.control(
 											ConstantUtil.INFRARED_1_SERVE, "5",
 											ConstantUtil.OPEN);
@@ -412,17 +358,17 @@ public class LinkActivity extends Fragment {
 											ConstantUtil.OPEN);
 								}
 							}
-							if (shebnei.equals("ÉäµÆÈ«¿ª")) {
+							if (shebnei.equals("å°„ç¯å…¨å¼€")) {
 								ControlUtils.control(ConstantUtil.Lamp,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.OPEN);
 							}
-							if (shebnei.equals("ÉäµÆÈ«¹Ø")) {
+							if (shebnei.equals("å°„ç¯å…¨å…³")) {
 								ControlUtils.control(ConstantUtil.Lamp,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.CLOSE);
 							}
-							if (shebnei.equals("±¨¾¯µÆ¿ª")) {
+							if (shebnei.equals("æŠ¥è­¦ç¯å¼€")) {
 								ControlUtils.control(ConstantUtil.WarningLight,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.OPEN);
@@ -431,14 +377,14 @@ public class LinkActivity extends Fragment {
 							tick_timer = 0;
 							tick_timer++;
 							if (tick_timer == 1) {
-								if (shebnei.equals("¿Õµ÷")) {
+								if (shebnei.equals("ç©ºè°ƒ")) {
 									ControlUtils.control(
 											ConstantUtil.INFRARED_1_SERVE, "1",
 											ConstantUtil.OPEN);
 								}
 							}
 							if (tick_timer == 1) {
-								if (shebnei.equals("µçÊÓ")) {
+								if (shebnei.equals("ç”µè§†")) {
 									ControlUtils.control(
 											ConstantUtil.INFRARED_1_SERVE, "5",
 											ConstantUtil.OPEN);
@@ -451,17 +397,17 @@ public class LinkActivity extends Fragment {
 											ConstantUtil.OPEN);
 								}
 							}
-							if (shebnei.equals("ÉäµÆÈ«¿ª")) {
+							if (shebnei.equals("å°„ç¯å…¨å¼€")) {
 								ControlUtils.control(ConstantUtil.Lamp,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.OPEN);
 							}
-							if (shebnei.equals("ÉäµÆÈ«¹Ø")) {
+							if (shebnei.equals("å°„ç¯å…¨å…³")) {
 								ControlUtils.control(ConstantUtil.Lamp,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.CLOSE);
 							}
-							if (shebnei.equals("±¨¾¯µÆ¿ª")) {
+							if (shebnei.equals("æŠ¥è­¦ç¯å¼€")) {
 								ControlUtils.control(ConstantUtil.WarningLight,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.OPEN);
@@ -476,14 +422,14 @@ public class LinkActivity extends Fragment {
 								.valueOf(number)) {
 							tick_timer++;
 							if (tick_timer == 1) {
-								if (shebnei.equals("¿Õµ÷")) {
+								if (shebnei.equals("ç©ºè°ƒ")) {
 									ControlUtils.control(
 											ConstantUtil.INFRARED_1_SERVE, "1",
 											ConstantUtil.OPEN);
 								}
 							}
 							if (tick_timer == 1) {
-								if (shebnei.equals("µçÊÓ")) {
+								if (shebnei.equals("ç”µè§†")) {
 									ControlUtils.control(
 											ConstantUtil.INFRARED_1_SERVE, "5",
 											ConstantUtil.OPEN);
@@ -496,17 +442,17 @@ public class LinkActivity extends Fragment {
 											ConstantUtil.OPEN);
 								}
 							}
-							if (shebnei.equals("ÉäµÆÈ«¿ª")) {
+							if (shebnei.equals("å°„ç¯å…¨å¼€")) {
 								ControlUtils.control(ConstantUtil.Lamp,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.OPEN);
 							}
-							if (shebnei.equals("ÉäµÆÈ«¹Ø")) {
+							if (shebnei.equals("å°„ç¯å…¨å…³")) {
 								ControlUtils.control(ConstantUtil.Lamp,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.CLOSE);
 							}
-							if (shebnei.equals("±¨¾¯µÆ¿ª")) {
+							if (shebnei.equals("æŠ¥è­¦ç¯å¼€")) {
 								ControlUtils.control(ConstantUtil.WarningLight,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.OPEN);
@@ -515,14 +461,14 @@ public class LinkActivity extends Fragment {
 							tick_timer = 0;
 							tick_timer++;
 							if (tick_timer == 1) {
-								if (shebnei.equals("¿Õµ÷")) {
+								if (shebnei.equals("ç©ºè°ƒ")) {
 									ControlUtils.control(
 											ConstantUtil.INFRARED_1_SERVE, "1",
 											ConstantUtil.OPEN);
 								}
 							}
 							if (tick_timer == 1) {
-								if (shebnei.equals("µçÊÓ")) {
+								if (shebnei.equals("ç”µè§†")) {
 									ControlUtils.control(
 											ConstantUtil.INFRARED_1_SERVE, "5",
 											ConstantUtil.OPEN);
@@ -535,17 +481,17 @@ public class LinkActivity extends Fragment {
 											ConstantUtil.OPEN);
 								}
 							}
-							if (shebnei.equals("ÉäµÆÈ«¿ª")) {
+							if (shebnei.equals("å°„ç¯å…¨å¼€")) {
 								ControlUtils.control(ConstantUtil.Lamp,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.OPEN);
 							}
-							if (shebnei.equals("ÉäµÆÈ«¹Ø")) {
+							if (shebnei.equals("å°„ç¯å…¨å…³")) {
 								ControlUtils.control(ConstantUtil.Lamp,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.CLOSE);
 							}
-							if (shebnei.equals("±¨¾¯µÆ¿ª")) {
+							if (shebnei.equals("æŠ¥è­¦ç¯å¼€")) {
 								ControlUtils.control(ConstantUtil.WarningLight,
 										ConstantUtil.CHANNEL_ALL,
 										ConstantUtil.OPEN);
