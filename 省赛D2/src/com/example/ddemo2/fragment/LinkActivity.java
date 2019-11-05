@@ -59,12 +59,12 @@ public class LinkActivity extends Fragment {
 						if (!et_number_get.getText().toString().isEmpty()) {
 							link_mode = true;
 						} else {
-							DiyToast.showToast(getActivity(), "ÇëÊäÈë²ÎÊı");
+							DiyToast.showToast(getActivity(), "è¯·è¾“å…¥å‚æ•°");
 							link_mode = false;
 							cb_link_mode.setChecked(false);
 						}
 					} else {
-						DiyToast.showToast(getActivity(), "ÇëÑ¡ÔñÖ´ĞĞÆ÷¼ş");
+						DiyToast.showToast(getActivity(), "è¯·é€‰æ‹©æ‰§è¡Œå™¨ä»¶");
 						cb_link_mode.setChecked(false);
 						link_mode = false;
 					}
@@ -84,7 +84,7 @@ public class LinkActivity extends Fragment {
 				if (!et_number_get.getText().toString().isEmpty()) {
 					link_mode = true;
 				} else {
-					DiyToast.showToast(getActivity(), "ÇëÊäÈë²ÎÊı");
+					DiyToast.showToast(getActivity(), "è¯·è¾“å…¥å‚æ•°");
 					link_mode = false;
 					cb_link_mode.setChecked(false);
 				}
@@ -99,8 +99,8 @@ public class LinkActivity extends Fragment {
 					String spinner_2 = sp_2.getSelectedItem().toString();
 					int number_get = Integer.valueOf(et_number_get.getText()
 							.toString());
-					if (spinner_1.equals("ÎÂ¶È")) {
-						if (spinner_2.equals("´óÓÚ")) {
+					if (spinner_1.equals("æ¸©åº¦")) {
+						if (spinner_2.equals("å¤§äº")) {
 							if (BaseActivity.temp > number_get) {
 								if (cur_state) {
 									ControlUtils.control(ConstantUtil.Curtain,
@@ -124,7 +124,7 @@ public class LinkActivity extends Fragment {
 											ConstantUtil.OPEN);
 								}
 							} else {
-								DiyToast.showToast(getActivity(), "´íÎó£ºÌõ¼ş²»Âú×ã");
+								DiyToast.showToast(getActivity(), "é”™è¯¯ï¼šæ¡ä»¶ä¸æ»¡è¶³");
 								link_mode = false;
 								cb_link_mode.setChecked(false);
 								if (cur_state) {
@@ -150,7 +150,7 @@ public class LinkActivity extends Fragment {
 								}
 							}
 						}
-						if (spinner_2.equals("Ğ¡ÓÚ")) {
+						if (spinner_2.equals("å°äº")) {
 
 							if (BaseActivity.temp < number_get) {
 								if (cur_state) {
@@ -175,7 +175,7 @@ public class LinkActivity extends Fragment {
 											ConstantUtil.OPEN);
 								}
 							} else {
-								DiyToast.showToast(getActivity(), "´íÎó£ºÌõ¼ş²»Âú×ã");
+								DiyToast.showToast(getActivity(), "é”™è¯¯ï¼šæ¡ä»¶ä¸æ»¡è¶³");
 								link_mode = false;
 								cb_link_mode.setChecked(false);
 								if (cur_state) {
@@ -203,9 +203,9 @@ public class LinkActivity extends Fragment {
 
 						}
 					}
-					if (spinner_1.equals("ÆøÑ¹")) {
+					if (spinner_1.equals("æ°”å‹")) {
 
-						if (spinner_2.equals("´óÓÚ")) {
+						if (spinner_2.equals("å¤§äº")) {
 							if (BaseActivity.press > number_get) {
 								if (cur_state) {
 									ControlUtils.control(ConstantUtil.Curtain,
@@ -229,7 +229,7 @@ public class LinkActivity extends Fragment {
 											ConstantUtil.OPEN);
 								}
 							} else {
-								DiyToast.showToast(getActivity(), "´íÎó£ºÌõ¼ş²»Âú×ã");
+								DiyToast.showToast(getActivity(), "é”™è¯¯ï¼šæ¡ä»¶ä¸æ»¡è¶³");
 								link_mode = false;
 								cb_link_mode.setChecked(false);
 								if (cur_state) {
@@ -255,7 +255,7 @@ public class LinkActivity extends Fragment {
 								}
 							}
 						}
-						if (spinner_2.equals("Ğ¡ÓÚ")) {
+						if (spinner_2.equals("å°äº")) {
 
 							if (BaseActivity.press < number_get) {
 								if (cur_state) {
@@ -280,7 +280,7 @@ public class LinkActivity extends Fragment {
 											ConstantUtil.OPEN);
 								}
 							} else {
-								DiyToast.showToast(getActivity(), "´íÎó£ºÌõ¼ş²»Âú×ã");
+								DiyToast.showToast(getActivity(), "é”™è¯¯ï¼šæ¡ä»¶ä¸æ»¡è¶³");
 								link_mode = false;
 								cb_link_mode.setChecked(false);
 								if (cur_state) {
@@ -309,9 +309,9 @@ public class LinkActivity extends Fragment {
 						}
 
 					}
-					if (spinner_1.equals("¹âÕÕ")) {
+					if (spinner_1.equals("å…‰ç…§")) {
 
-						if (spinner_2.equals("´óÓÚ")) {
+						if (spinner_2.equals("å¤§äº")) {
 							if (BaseActivity.ill > number_get) {
 								if (cur_state) {
 									ControlUtils.control(ConstantUtil.Curtain,
@@ -335,7 +335,7 @@ public class LinkActivity extends Fragment {
 											ConstantUtil.OPEN);
 								}
 							} else {
-								DiyToast.showToast(getActivity(), "´íÎó£ºÌõ¼ş²»Âú×ã");
+								DiyToast.showToast(getActivity(), "é”™è¯¯ï¼šæ¡ä»¶ä¸æ»¡è¶³");
 								link_mode = false;
 								cb_link_mode.setChecked(false);
 								if (cur_state) {
@@ -361,7 +361,7 @@ public class LinkActivity extends Fragment {
 								}
 							}
 						}
-						if (spinner_2.equals("Ğ¡ÓÚ")) {
+						if (spinner_2.equals("å°äº")) {
 
 							if (BaseActivity.ill < number_get) {
 								if (cur_state) {
@@ -386,7 +386,7 @@ public class LinkActivity extends Fragment {
 											ConstantUtil.OPEN);
 								}
 							} else {
-								DiyToast.showToast(getActivity(), "´íÎó£ºÌõ¼ş²»Âú×ã");
+								DiyToast.showToast(getActivity(), "é”™è¯¯ï¼šæ¡ä»¶ä¸æ»¡è¶³");
 								link_mode = false;
 								cb_link_mode.setChecked(false);
 								if (cur_state) {
@@ -415,9 +415,9 @@ public class LinkActivity extends Fragment {
 						}
 
 					}
-					if (spinner_1.equals("Êª¶È")) {
+					if (spinner_1.equals("æ¹¿åº¦")) {
 
-						if (spinner_2.equals("´óÓÚ")) {
+						if (spinner_2.equals("å¤§äº")) {
 							if (BaseActivity.hum > number_get) {
 								if (cur_state) {
 									ControlUtils.control(ConstantUtil.Curtain,
@@ -441,7 +441,7 @@ public class LinkActivity extends Fragment {
 											ConstantUtil.OPEN);
 								}
 							} else {
-								DiyToast.showToast(getActivity(), "´íÎó£ºÌõ¼ş²»Âú×ã");
+								DiyToast.showToast(getActivity(), "é”™è¯¯ï¼šæ¡ä»¶ä¸æ»¡è¶³");
 								link_mode = false;
 								cb_link_mode.setChecked(false);
 								if (cur_state) {
@@ -467,7 +467,7 @@ public class LinkActivity extends Fragment {
 								}
 							}
 						}
-						if (spinner_2.equals("Ğ¡ÓÚ")) {
+						if (spinner_2.equals("å°äº")) {
 
 							if (BaseActivity.hum < number_get) {
 								if (cur_state) {
@@ -492,7 +492,7 @@ public class LinkActivity extends Fragment {
 											ConstantUtil.OPEN);
 								}
 							} else {
-								DiyToast.showToast(getActivity(), "´íÎó£ºÌõ¼ş²»Âú×ã");
+								DiyToast.showToast(getActivity(), "é”™è¯¯ï¼šæ¡ä»¶ä¸æ»¡è¶³");
 								link_mode = false;
 								cb_link_mode.setChecked(false);
 								if (cur_state) {
@@ -536,13 +536,15 @@ public class LinkActivity extends Fragment {
 		}
 	};
 
-	private void dialog_chose() {
+private void dialog_chose() {
 		// TODO Auto-generated method stub
-		final AlertDialog.Builder builder = new AlertDialog.Builder(
-				getActivity());
+		final AlertDialog builder = new AlertDialog.Builder(getActivity())
+				.create();
+		builder.show();
 		View view = LayoutInflater.from(getActivity()).inflate(
 				R.layout.diaolog_chose_shebei, null, false);
-		builder.setView(view);
+		Window window = builder.getWindow();
+		window.setContentView(view);
 		Button btn_con = (Button) view.findViewById(R.id.btn_chose_con);
 		CheckBox ra_lamp, ra_warm, ra_cur, ra_fan;
 		ra_cur = (CheckBox) view.findViewById(R.id.cb_cur);
@@ -554,13 +556,14 @@ public class LinkActivity extends Fragment {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				builder.create();
-				DiyToast.showToast(getActivity(), "ÉèÖÃ³É¹¦");
-
+				/*
+				 * æ£€æµ‹é€‰æ‹©çŠ¶æ€
+				 */
 				if (cur_state || fan_state || lamp_state || warm_state) {
-
+					builder.dismiss();
+					DiyToast.showToast(getActivity(), "è®¾ç½®æˆåŠŸ");
 				} else {
-					DiyToast.showToast(getActivity(), "ÇëÑ¡Ôñ");
+					DiyToast.showToast(getActivity(), "è¯·é€‰æ‹©");
 				}
 			}
 		});
@@ -628,6 +631,5 @@ public class LinkActivity extends Fragment {
 		if (warm_state) {
 			ra_warm.setChecked(true);
 		}
-		builder.show();
 	}
 }
