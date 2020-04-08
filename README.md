@@ -1,23 +1,10 @@
-# SmartHome2019省赛
-
+# NT_Launcher_DK
+你可以通过[爱发电](https://afdian.net/@naiyouhuameitang)向我投食，<del>用金钱催更</del>。
 #### 介绍
-SmartHome2019省赛
-省赛E题
-2019/11/4
-编译完成，较为完美
-
-#### 软件架构
-Android
-Run On ARM
-实体机：企想嵌入套件
-#### 参与贡献
- Fork 本仓库
-
-#### 码云特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+这是我积攒的各年智能家居技能大赛中职组赛题源码，欢迎大家下载查阅
+你可以在博客内找到：
+1.测试版
+2.源代码（Gitee）
+3.历史更新日志
+4.所有的历史版本
+博客：[どうして私だけが](https://naiyouhuameitang.club/)
